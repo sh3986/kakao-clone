@@ -1,6 +1,9 @@
 - 추천 VSC 익스텐션
     1. prettier 코드 자동 수정 익스텐션
     https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+    
+    First, search "editor format on save" then check the box. and
+    search "json" then scroll and find out "edit in settings.json" and check "editor.formatonsave: true"
 
     setting.json에서 
     "editor.formatOnSave": true 으로 변경
