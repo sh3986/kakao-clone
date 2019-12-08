@@ -1,0 +1,230 @@
+CSS
+
+selector 파트
+해당 property를 html내 특정 태그에
+연결할 때 사용
+
+- 태그
+h1 {
+    property-name: value;
+    property-name: value;
+    property-name: value;
+    property-name: value;
+    property-name: value;
+}
+
+- ID
+#name {
+
+}
+
+- class
+.name {
+
+}
+
+property 파트
+property-name: value;
+
+
+- HTML와 CSS 연결
+1. inline 방식 : 엄청 구린 방식
+같은 클래스를 쓴다고 생각할 때 모든 html문서에
+해당 CSS를 복사해서 입력 (엄청 불편)
+<heade>
+ <style>
+    body{
+      background-color: red;
+    }
+  </style>
+</head>
+
+2. 외부 external 연결 (CSS파일을 만들자)
+<link rel="stylesheet" href="style.css" />
+styles.css는 모든 html문서 head에 연결되어야 한다.
+
+
+- box 요소
+content
+padding
+border
+margin
+
+padding: 20px;
+padding: 상, 하, 좌, 우
+
+padding: 20px 10px;
+padding: 상하, 좌우
+
+padding: 20px 10px 5px 2px;
+padding: 상 20, 우 10, 하 5, 좌 2
+
+border-width: 5px;
+border-color: red;
+border-style: dashed;
+
+border: 5px dashed red;
+
+- Position
+박스는 인라인-블록이나 블록 중
+하나가 되어야 한다.
+
+block, inline block, (폭, 높이 존재)
+<-> inline
+
+block : 나 이외에 다른 것이 옆에 있는 것을
+허용하지 않는 Position
+
+display 프로퍼티 default 값
+
+inline-block:
+서로 서로 붙어있도록 할 수 있는 position
+display: inline-block;
+
+inline - 텍스트!!! (폭과 높이 존재X, 텍스트 만큼만 존재)
+(중요) 박스의 모든 property 설정 값을 삭제
+이건 박스가 아니게되며, 텍스트 처럼 적용
+    <style>
+      .box {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="box">1</span>
+    <span class="box">1</span>
+    <span class="box">1</span>
+  </body>
+
+
+- position 
+브라우저 디폴트 값을 상쇄시킬 때 사용
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+모든 박스의 default 포지션 : static
+div#boxTwo
+position: static;
+
+static : 내가 위치한 거기에 계속 남아있는다. -> 스크롤하면 화면에서 안보일 수 있다.
+( 거기 그대로 위치한 Position )
+fixed : 고정된 박스 -> 스크롤해도 항상 화면에 보인다.
+
+포지션 fixed하고 4가지 설정값 지정 가능: 상 하 좌 우 간격(어디든 붙일 수 있다.)
+position: fixed;
+bottom: 10px;
+right: 0;
+
+absolute : fixed랑 비슷 (<-> 어디에든 붙일 수 있지만, 스크롤한다고 보이진 않음 )
+.abs-box {
+  width: 400px;
+  height: 400px;
+  background-color: tomato;
+}
+.abs-child {
+  width: 100px;
+  height: 100px;
+  background-color: violet;
+  position: absolute;
+  right: 0;
+}
+<div class="abs-box">
+  <div class="abs-child"></div>
+</div>
+
+부모박스가 상으하는 관계가 없으면(relatvie 박스) 그냥 우리가 설정한 값대로 움직인다.
+abs-child 가 abs-box 밖으로 나가서 위치하게 된다. (father을 body로 잡는다.)
+=> 부모에 해당하는 박스를 찾지 못했기 때문
+
+포지션 absolute는 html상에서 해당 element와 관계있는 부모 element(relative)를
+살펴보고 이에 상응해서 포지션 결정 relatvie(박스가 있어야 한다.)
+
+.abs-box {
+  width: 400px;
+  height: 400px;
+  background-color: tomato;
+  position: relative;
+}
+
+
+- Fluid layouts with Flexbox ( 연습사이트 flexboxfroggy.com/#ko)
+    <style>
+      .box {
+        background-color: slateblue;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        margin-right: 7.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+
+위에 처럼 작업할 때 margin-right를 일일이 
+지정해줘야한다. (자동으로 완성되는 그리드가 없어서)
+
+-> Flex를 적용하면 간단하게 해결( 자식 클래스는 건드리지 않고 위치 조정 )
+
+Flex를 사용할 때 Children 박스에는 적용X
+오직 부모클래스에만 적용
+
+father 클래스가 display: flex; 이면 자식 클래스들은 
+자동으로 inline-block이 된다.
+
+창이 조정되면 flex안에 있는 클래스들은 자동으로 크기 조정
+flex-wrap: wrap; -> 폭을 유지하면서 다음 줄로 변경
+자동으로 폭맞춤 위치 맞춤
+
+.father {
+        display: flex;
+        justify-content: space-around; -> 수평으로 적용
+        align-items: flex-start; -> 수직으로 적용
+}
+.box {
+  background-color: slateblue;
+  width: 200px;
+  height: 200px;
+  margin-right: 7.5px;
+}
+
+flex-direction: row;  -> 디폴트값
+justify-content: space-around; -> 수평으로 적용
+align-items: flex-end; -> 수직으로 적용
+
+flex-direction: column
+justify-content: space-around; -> 수직으로 적용
+align-items: flex-end; -> 수평으로 적용
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
