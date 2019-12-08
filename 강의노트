@@ -112,9 +112,9 @@ The orange is the fruit of the citrus species Citrus × sinensis in ...
 - non-semantic 태그 : 아무 의미가 없는 태그
 아무 지칭하는 바가 없는 태그
 <div> : 컨데이너 박스 태그 ( 이 안에 내용을 넣는다.)
-<span> : 짧은 타이틀인건지, 문단인건지 전혀 알 수 없는 태그
-        텍스트를 위한 컨테이너
-
+<span> : 텍스트를 위한 컨테이너
+짧은 타이틀인건지, 문단인건지 전혀 알 수 없는 태그
+        
 - html ID, Class
 <div>
     <div> 

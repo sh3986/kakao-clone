@@ -214,15 +214,69 @@ justify-content: space-around; -> 수직으로 적용
 align-items: flex-end; -> 수평으로 적용
 
 
+- Selectors and Pseudo Selectors 
+외울필요 없고 연습을 많이 해봐야한다.
+Pseudo Selectors 
+ : 태그이름, class, id를 쓰지 않고 선택하는 방법
+div.container>div.box*3
 
+팀으로 일할 때 class말고 Pseudo selector를 통해 select할 수 있다.
+Pseudo selector : 셀렉터인데 element가 아닌 것 (조건에 맞게)
 
+input[type="submit"] {
+        background-color: tomato;
+}
 
+이렇게 하면 <input type="submit" /> 얘를 클래스 지정할 필요 X
 
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+.box {
+  background-color: skyblue;
+  display: block;
+  height: 100px;
+  border: 1px solid black;
+}
+.box:last-child {
+  background-color: silver;
+}
+.box:first-child {
+  background-color: rebeccapurple;
+}
+.box:nth-child(2) {
+  background-color: rosybrown;
+}
+.box:nth-child(2n) {
+  background-color: royalblue;
+}
 
+input과 .box가 형제
+input + .box {
+  border: 1px solid black;
+}
 
+.box가 input의 direct child
+input >.box {
+  border: 1px solid black;
+}
 
+- css states
+크롬 검사에 들어가서 해당 태그 :hov 클릭
 
+active, focus, visited, hover
 
+.box:hover { -> 해당 박스 위에 마우스가 올라가면
+        
+}
+
+.hover:active { -> 마우스로 클릭했을 때
+
+}
+
+.hover:focus { -> 텍스트 입력할 때 가장자리에 파란 줄 생기는 그거
+
+}
 
 
 
