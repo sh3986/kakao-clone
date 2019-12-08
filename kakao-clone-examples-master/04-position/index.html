@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Postiton</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 400%;
+        background-color: skyblue;
+      }
+      /*Position fixde*/
+      /* #boxOne {
+        height: 300px;
+        width: 300px;
+        background-color: teal;
+        position: static;
+      }
+      #boxTwo {
+        height: 300px;
+        width: 300px;
+        background-color: tomato;
+        position: fixed;
+        bottom: 10px;
+        right: 0;
+      } */
+      .abs-box {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+        position: relative;
+      }
+      .abs-child {
+        width: 100px;
+        height: 100px;
+        background-color: violet;
+        position: absolute;
+        right: 0;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="abs-box">
+      <div class="abs-child"></div>
+    </div>
+    <!--Position Fixed-->
+    <!-- <div id="boxOne">
+      <div class="box-child"></div>
+    </div>
+    <div id="boxTwo">
+      <div class="box-child"></div>
+    </div> -->
+  </body>
+</html>
