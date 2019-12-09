@@ -1,0 +1,108 @@
+- Transitions
+마우스 올릴 때 hover 색상이 변하는 그 사이에
+변화되는 모습(Transitions) 효과를 넣어보자.
+
+.box {
+    background-color: darkseagreen;
+    color: white;
+    transition: background-color 1s ease-in-out;
+}
+background-color 1s ease-in-out;
+배경색을 1s안에 스르륵 사라지게 해라.
+
+관련 링크 : https://developer.mozilla.org/en-US/docs/Web/CSS/transition (엄청 멋있다)
+
+transition: all 0.5s ease-in-out;
+모든 변화(all state)q에 적용해라
+
+-> transition은 어떤 State(hover, active, focus, visited)가 바뀔 때 적용하는 것
+
+- transformations
+관련 링크 : https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+html문서의 elements들의 모습을 변경하는 효과
+
+.box {
+    width: 100px;
+    height: 1500px;
+    background-color: tomato;
+    transition: transform 1s ease-in-out;
+}
+.box:hover {
+    transform: translateX(10px) rotate(10deg) translateY(5px);
+    transform: rotate(1turn); -> 한바뀌 도는거
+    transform: rotate(1turn) scale(0.5, 0.5); -> 크기도 작게 하는 것
+}
+
+- Animations 
+hover와 같은 이벤트 없이 계속 효과가 발생하길 원할 때 사용
+
+애니메이션 생성하기 위해선 이름이 필요
+
+@keyframes -> css로 하여금 애니메이션을 생성했다고 알려주는 것
+@keyframes 애니메이션 이름 {
+    from{
+
+    }
+    to{
+
+    }
+    이거 대신 % 사용 가능
+    0%{
+
+    }
+    50%{
+
+    }
+    100%{
+
+    }
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    animation: 1.5s scaleAndRotateSqaure ease-in-out;
+}
+@keyframes scaleAndRotateSqaure {
+    from {
+        transform: none;
+    }
+    to {
+        transform: rotate(1turn) scale(0.5, 0.5);
+    }
+}
+
+animation: 1.5s scaleAndRotateSqaure infinite ease-in-out; -> 무한 애니메이션 실행
+
+@keyframes scaleAndRotateSqaure {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: rotate(1turn) scale(0.5, 0.5);
+    }
+    100% {
+        transform: none;
+    }
+} -> 돌다가 다시 제자리로 돌아옴
+
+- media-queries
+큰 스크린(데스크답)을 위한 css가 있고 작은 화면(모바일)을 위한 css가 있기 때문에
+브라우저가 큰지 작은지 알아내야 한다.
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    body {
+        background-color: skyblue;
+    }
+}
+ 우리가 보는 화면이 320 ~ 640 이면 body - background-color를 하늘색으로 바꿔라
+=> 반응형 웹디자인할 때 사용
+
+
+- 숙제
+
+Learn about BEM so that you can get ready for Kakao-clone Practice! Read and check out all the links below ;)
+
+http://getbem.com/introduction/
+https://en.bem.info/methodology/key-concepts/
+https://en.bem.info/methodology/quick-start/

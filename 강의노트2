@@ -140,7 +140,7 @@ absolute : fixed랑 비슷 (<-> 어디에든 붙일 수 있지만, 스크롤한�
   <div class="abs-child"></div>
 </div>
 
-부모박스가 상으하는 관계가 없으면(relatvie 박스) 그냥 우리가 설정한 값대로 움직인다.
+부모박스가 상응하는 관계가 없으면(relatvie 박스) 그냥 우리가 설정한 값대로 움직인다.
 abs-child 가 abs-box 밖으로 나가서 위치하게 된다. (father을 body로 잡는다.)
 => 부모에 해당하는 박스를 찾지 못했기 때문
 
@@ -155,7 +155,7 @@ abs-child 가 abs-box 밖으로 나가서 위치하게 된다. (father을 body�
 }
 
 
-- Fluid layouts with Flexbox ( 연습사이트 flexboxfroggy.com/#ko)
+- Fluid layouts with Flexbox ( 연습사이트 flexboxfroggy.com/#ko : 13번까지 연습)
     <style>
       .box {
         background-color: slateblue;
@@ -192,6 +192,19 @@ father 클래스가 display: flex; 이면 자식 클래스들은
 창이 조정되면 flex안에 있는 클래스들은 자동으로 크기 조정
 flex-wrap: wrap; -> 폭을 유지하면서 다음 줄로 변경
 자동으로 폭맞춤 위치 맞춤
+
+- justify-content , align-items
+flex-start: 요소들을 컨테이너의 왼쪽으로 정렬합니다.
+flex-end: 요소들을 컨테이너의 오른쪽으로 정렬합니다.
+center: 요소들을 컨테이너의 가운데로 정렬합니다.
+space-between: 요소들 사이에 동일한 간격을 둡니다.
+space-around: 요소들 주위에 동일한 간격을 둡니다.
+
+- flex-direction
+row: 요소들을 텍스트의 방향과 동일하게 정렬합니다.
+row-reverse: 요소들을 텍스트의 반대 방향으로 정렬합니다.
+column: 요소들을 위에서 아래로 정렬합니다.
+column-reverse: 요소들을 아래에서 위로 정렬합니다.
 
 .father {
         display: flex;
